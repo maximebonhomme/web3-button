@@ -38,30 +38,30 @@ function App() {
   }
 
   return (
-<Flex
-  alignItems='center'
-  justifyContent='center'
-  height='100vh'
-  bg='purple.900'
->
-  {account.address ? (
-    <Box
-      maxW='sm'
-      borderRadius='3xl'
-      p='5'
-      bg='white'
-      textAlign='center'
+    <Flex
+      alignItems='center'
+      justifyContent='center'
+      height='100vh'
+      bg='purple.900'
     >
-      <Avatar name={account.ens} src={account.avatar} size='lg' mb='2'  />
-      {account.ens && (
-        <Text fontSize='xl'>{account.ens}</Text>
+      {account.address ? (
+        <Box
+          maxW='sm'
+          borderRadius='3xl'
+          p='5'
+          bg='white'
+          textAlign='center'
+        >
+          <Avatar name={account.ens} src={account.avatar} size='lg' mb='2'  />
+          {account.ens && (
+            <Text fontSize='xl'>{account.ens}</Text>
+          )}
+          <Text fontSize='xs' title={account.address}>{shortenAddress(account.address)}</Text>
+        </Box>
+      ) : (
+        <Button onClick={connectWallet}>Connect wallet</Button>
       )}
-      <Text fontSize='xs' title={account.address}>{shortenAddress(account.address)}</Text>
-    </Box>
-  ) : (
-    <Button onClick={connectWallet}>Connect wallet</Button>
-  )}
-</Flex>
+    </Flex>
   );
 }
 
