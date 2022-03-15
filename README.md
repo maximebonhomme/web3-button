@@ -7,6 +7,6 @@ Connect to a wallet and display its address + ens name and avatar using React, C
 
 ## Get started
 
-run `npm install & npm start`
+run `npm install && npm start`
 
 open [http://localhost:3000](http://localhost:3000)
